@@ -11,23 +11,66 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
           backgroundColor: Colors.teal,
           body: SafeArea(
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Container(width: 100.0, color: Colors.red),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                        width: 100.0, height: 100.0, color: Colors.yellow),
-                    Container(width: 100.0, height: 100.0, color: Colors.green),
-                  ],
+              child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              CircleAvatar(
+                radius: 50,
+                backgroundColor: Colors.red[300],
+                backgroundImage: AssetImage("images/face.png"),
+              ),
+              Text(
+                "My Flutter",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 40.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Pacifico",
                 ),
-                Container(width: 100.0, color: Colors.blue),
-              ],
-            ),
-          )),
+              ),
+              Text(
+                "Flutter Learner".toUpperCase(),
+                style: TextStyle(
+                  color: Colors.teal.shade100,
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w400,
+                  fontFamily: "SourceSansPro",
+                ),
+              ),
+              SizedBox(
+                  height: 20.0,
+                  width: 150.0,
+                  child: Divider(
+                    color: Colors.tealAccent,
+                  )),
+              Card(
+                  color: Colors.white,
+                  margin:
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                  child: ListTile(
+                      leading: Icon(
+                        Icons.phone,
+                        color: Colors.teal,
+                      ),
+                      title: Text("010-1111-2222",
+                          style: TextStyle(
+                            color: Colors.teal,
+                          )))),
+              Card(
+                  color: Colors.white,
+                  margin:
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                  child: ListTile(
+                      leading: Icon(Icons.home, color: Colors.teal),
+                      title: Text("Gangnam-gu, Seoul, Korea",
+                          style: TextStyle(
+                            color: Colors.teal,
+                            fontWeight: FontWeight.bold,
+                          ))))
+            ],
+          ))),
     );
   }
 }
